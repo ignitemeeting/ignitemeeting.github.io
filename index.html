@@ -51,11 +51,11 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
       </style>
-    <title>Welcome to Aqua-Aerobic Systems, Inc</title>
+    <title>Welcome to Ignite Church @ Lakewood</title>
   </head>
   <body style="font-family: sans-serif;font-size: large;">
     <img id="logo" src="aqua.png" width="200px"></center><br>
-    <!-- <h1 style="text-align: center;">Welcome to Aqua-Aerobic Systems, Inc</h1> -->
+    <!-- <h1 style="text-align: center;">Welcome to Ignite Church @ Lakewood</h1> -->
     <!-- <div id="header"> <h2 style="text-align: center;">Please enter your information...</h2></div>-->
     <div id="qr" style="display: none;">
     <center>
@@ -99,13 +99,13 @@ tr:nth-child(even) {
 <script type="text/javascript">
     (function() {
        var firebaseConfig = {
-             apiKey: "AIzaSyC_Wl1RgIWazRk3OhodD5QQTykOcIyZMNs",
-    authDomain: "aquacheckin-e0b0b.firebaseapp.com",
-    projectId: "aquacheckin-e0b0b",
-    storageBucket: "aquacheckin-e0b0b.appspot.com",
-    messagingSenderId: "606092531450",
-    appId: "1:606092531450:web:0cb5aa1499296eae14db43",
-    measurementId: "G-T2LP2MT4DG"
+             apiKey: "AIzaSyDkdpSjBHIrzPNzhuw2_2Em1C0TPDffpiI",
+  authDomain: "ignitecheckin.firebaseapp.com",
+  projectId: "ignitecheckin",
+  storageBucket: "ignitecheckin.appspot.com",
+  messagingSenderId: "128183687677",
+  appId: "1:128183687677:web:af290d58201ce2c6076194",
+  measurementId: "G-631B6Y9QF4"
       };
 
       firebase.initializeApp(firebaseConfig);
@@ -203,7 +203,7 @@ tr:nth-child(even) {
         varweb =  data["key"] + "&checkin=Now";
         varkey = data["key"];
        console.log(varkey);
-        db.collection("messages").where("key", "==",varkey)
+        db.collection("members").where("key", "==",varkey)
     .get()
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
@@ -214,7 +214,7 @@ tr:nth-child(even) {
            console.log(varFName);
            console.log(varLName);
      
-                document.getElementById('note').innerHTML= "Thank you, " + varFName + " " + varLName + "<br><br>CHECK-IN PROCESS:<br>Upon arrival at Aqua-Aerobic Systems<br>Please Scan Below QR Code<br>via the iPad stand in our lobby";
+                document.getElementById('note').innerHTML= "Thank you, " + varFName + " " + varLName + "<br><br>CHECK-IN PROCESS:<br>Upon arrival at Ignite Church<br>Please Scan Below QR Code<br>via the iPad stand in our lobby";
    
     }); 
 

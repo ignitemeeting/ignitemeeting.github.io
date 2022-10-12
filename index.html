@@ -71,9 +71,6 @@ tr:nth-child(even) {
       
        <label for="lname" style="color: black;font-weight: bold;">Last Name</label>
       <input type="text" id="lname" name="lname" placeholder="Enter your last name" style=" font-size: large;">
-        
-      <label for="email" style="color: black;font-weight: bold;">Email</label>
-      <input type="text" id="email" name="email" placeholder="Enter your email" style=" font-size: large;">
       
       <label for="pname" style="color: black;font-weight: bold;">Parent/Guardian First & Last Name</label>
       <input type="text" id="pname" name="pname" placeholder="Enter one parent/guardian full name.Example: Chuck Konkol" style=" font-size: large;">
@@ -140,8 +137,6 @@ tr:nth-child(even) {
         var fname = document.getElementById("fname");
         console.log(fname.value.trim());
         var lname = document.getElementById("lname");
-         console.log(lname.value.trim());
-        var email = document.getElementById("email");
          console.log(email.value.trim());
          var pname = document.getElementById("pname");
          console.log(pname.value.trim());
@@ -152,13 +147,13 @@ tr:nth-child(even) {
                    var grade = document.getElementById("grade");
          console.log(grade.value.trim());
          var data = {
-          "key": fname.value + lname.value + datess + '&fname=' + fname.value.trim() + '&lname=' + lname.value.trim() + '&email=' + email.value.trim() + '&parent=' +  pname.value.trim() + '&phone=' + pphone.value.trim()  + '&grade=' + grade.value.trim() + '&date=' + datess + '&checkin=walkin',
+          "key": fname.value + lname.value + datess + '&fname=' + fname.value.trim() + '&lname=' + lname.value.trim() + '&email=' + pemail.value.trim() + '&parent=' +  pname.value.trim() + '&phone=' + pphone.value.trim()  + '&grade=' + grade.value.trim() + '&date=' + datess + '&checkin=walkin',
           "fname": fname.value,
           "lname": lname.value,
            "mobile": mobile,
            "ipad": ipad
          }
-        if (fname.value != null &&  fname.value != '' && lname.value != null &&  lname.value != '' && pname.value != null &&  pname.value != '' && pphone.value != null &&  pphone.value != '' && grade.value != null &&  grade.value != '' && email.value != null &&  email.value != '') {
+        if (fname.value != null &&  fname.value != '' && lname.value != null &&  lname.value != '' && pname.value != null &&  pname.value != '' && pphone.value != null &&  pphone.value != '' && grade.value != null &&  grade.value != '' && pemail.value != null &&  pemail.value != '') {
      createqrcode(data);
 } else {
     alert("All fields required!")

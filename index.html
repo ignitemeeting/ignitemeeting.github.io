@@ -75,15 +75,35 @@ tr:nth-child(even) {
       <label for="email" style="color: black;font-weight: bold;">Email</label>
       <input type="text" id="email" name="email" placeholder="Enter your email" style=" font-size: large;">
       
-      <label for="cname" style="color: black;font-weight: bold;">Company Name</label>
-      <input type="text" id="cname" name="cname" placeholder="Enter your company name" style=" font-size: large;">
+      <label for="pname" style="color: black;font-weight: bold;">Parent/Guardian First & Last Name</label>
+      <input type="text" id="pname" name="pname" placeholder="Enter one parent/guardian full name.Example: Chuck Konkol" style=" font-size: large;">
         
-      <label for="message" style="color: black;font-weight: bold;">Aqua Employee/Purpose of Visit</label>
-     <textarea id="message" name="message" placeholder="Enter employee name and/or purpose of visit" style="height: 60px;font-family: sans-serif;font-size: large;"></textarea>
- 
-      <br>
-        <label for="date" style="color: black;font-weight: bold;">Date & Time of Visit</label>&nbsp;&nbsp; 
-       <input type="datetime-local" id="date" name="date" style="font-family: sans-serif;"><br>
+       <label for="pphone" style="color: black;font-weight: bold;">Parent/Guardian Phone Number</label>
+      <input type="text" id="pphone" name="pphone" placeholder="Enter phone number with area code [Numbers Only].Example: 4171231234" style=" font-size: large;">
+
+      <label for="pemail" style="color: black;font-weight: bold;">Parent/Guardian  Email</label>
+      <input type="email" id="pemail" name="pemail" placeholder="Enter valid mail address.." style=" font-size: large;">
+     
+       <label for="grade">Grade</label>
+  <select name="grade" id="grade">
+    <option value="Prek">Pre-K</option>
+    <option value="K">K</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+        <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+        <option value="11">11</option>
+    <option value="12">12</option>
+        <option value="Adult">Adult</option>
+  </select>
+ <br>                                                                                                                  
+        
   <button id="get_qr_code" type="button" style="background-color: cadetblue;">Submit</button>
     
      </div>
@@ -114,25 +134,31 @@ tr:nth-child(even) {
       document.getElementById('reset').style.visibility = 'hidden';
       var viewport_meta = document.getElementById('viewport-meta');
       var get_qr_code = function(){
+        var tzoffset = (new Date()).getTimezoneOffset() * 60000; //offset in milliseconds
+       var text = (new Date(Date.now() - tzoffset)).toISOString().slice(0, 19);
+          var datess = text;
         var fname = document.getElementById("fname");
         console.log(fname.value.trim());
         var lname = document.getElementById("lname");
          console.log(lname.value.trim());
         var email = document.getElementById("email");
          console.log(email.value.trim());
-         var cname = document.getElementById("cname");
-         console.log(cname.value.trim());
-          var message = document.getElementById("message");
-         console.log(message.value.trim());
-          var date = document.getElementById("date");
+         var pname = document.getElementById("pname");
+         console.log(pname.value.trim());
+          var pphone = document.getElementById("pphone");
+         console.log(pphone.value.trim());
+              var pemail = document.getElementById("pemail");
+         console.log(pemail.value.trim());
+                   var grade = document.getElementById("grade");
+         console.log(grade.value.trim());
          var data = {
-          "key": fname.value + lname.value + date.value + '&fname=' + fname.value.trim() + '&lname=' + lname.value.trim() + '&email=' + email.value.trim() + '&company=' +  cname.value.trim() + '&message=' + message.value.trim() + '&date=' + date.value + '&checkin=walkin',
+          "key": fname.value + lname.value + datess + '&fname=' + fname.value.trim() + '&lname=' + lname.value.trim() + '&email=' + email.value.trim() + '&parent=' +  pname.value.trim() + '&phone=' + pphone.value.trim()  + '&grade=' + grade.value.trim() + '&date=' + datess + '&checkin=walkin',
           "fname": fname.value,
           "lname": lname.value,
            "mobile": mobile,
            "ipad": ipad
          }
-        if (fname.value != null &&  fname.value != '' && lname.value != null &&  lname.value != '' && date.value != null &&  date.value != '' && cname.value != null &&  cname.value != '' && message.value != null &&  message.value != '' && email.value != null &&  email.value != '') {
+        if (fname.value != null &&  fname.value != '' && lname.value != null &&  lname.value != '' && pname.value != null &&  pname.value != '' && pphone.value != null &&  pphone.value != '' && grade.value != null &&  grade.value != '' && email.value != null &&  email.value != '') {
      createqrcode(data);
 } else {
     alert("All fields required!")

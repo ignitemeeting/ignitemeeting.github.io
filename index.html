@@ -60,7 +60,7 @@ tr:nth-child(even) {
     <div id="qr" style="display: none;">
     <center>
     <div id="note"></div><br>    
-    <canvas id="qrcode"></canvas><br>
+   <canvas id="qrcode"></canvas><br>
     <div id="createrecord"></div><br><br>
     </center>
     </div>
@@ -204,6 +204,7 @@ tr:nth-child(even) {
 
        document.getElementById("myViewport").setAttribute("content", "initial-scale=1.0, width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0");
         document.getElementById('qr').style.display = 'contents';
+       document.getElementById('qr').setAttribute("align", "center");
        document.getElementById('container').style.visibility = 'hidden';
         //document.getElementById('header').style.display = 'none';
          document.getElementById('container').style.display = 'none';
@@ -260,6 +261,7 @@ tr:nth-child(even) {
 
        document.getElementById("myViewport").setAttribute("content", "initial-scale=1.0, width=device-width, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0");
         document.getElementById('qr').style.display = 'contents';
+        document.getElementById('qr').setAttribute("align", "center");
        document.getElementById('container').style.visibility = 'hidden';
        // document.getElementById('header').style.display = 'none';
          document.getElementById('container').style.display = 'none';

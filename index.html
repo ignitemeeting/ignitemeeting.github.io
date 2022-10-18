@@ -187,7 +187,7 @@ tr:nth-child(even) {
          document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"]; // + "<br><br><b>Mobile Phone Users:</b><br>Scan below QR Code to iPad app to check-in";
         document.getElementById('createrecord').innerHTML= "<a href='" + "https://ignitevisitorsystem.github.io/?key=" + key + "'>Click Here To Complete Check-In</a><br><b>take photo for future check-ins!</b><br>";
        }else{
-                document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"] + "<br><br>Scan Below QR Code<br>to complete Check-In<br><b>take screenshot for future check-ins!</b><br>";
+                document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"] + "<br>Upon arrival at Ignite Church<br>Please Scan Below QR Code<br>via the iPad stand in our lobby<br><br><b>take screenshot for future check-ins!</b>";
        }
        
          var qrcode = new QRious({

@@ -185,9 +185,9 @@ tr:nth-child(even) {
         var key = data["key"];
          if (ipad === 'Yes'){
          document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"]; // + "<br><br><b>Mobile Phone Users:</b><br>Scan below QR Code to iPad app to check-in";
-        document.getElementById('createrecord').innerHTML= "<a href='" + "https://ignitevisitorsystem.github.io/?key=" + key + "'>Click Here To Complete Check-In</a><br>(take screenshot for future check-ins)";
+        document.getElementById('createrecord').innerHTML= "<a href='" + "https://ignitevisitorsystem.github.io/?key=" + key + "'>Click Here To Complete Check-In</a><br>";
        }else{
-                document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"] + "<br><br>Scan Below QR Code<br>to complete Check-In<br>(take screenshot for future check-ins)";
+                document.getElementById('note').innerHTML= "Thank you, " + data["fname"] + " " + data["lname"] + "<br><br>Scan Below QR Code<br>to complete Check-In<br>";
        }
        
          var qrcode = new QRious({
@@ -236,7 +236,7 @@ tr:nth-child(even) {
            console.log(varFName);
            console.log(varLName);
      
-                document.getElementById('note').innerHTML= "Thank you, " + varFName + " " + varLName + "<br><br>CHECK-IN PROCESS:<br>Upon arrival at Ignite Church<br>Please Scan Below QR Code<br>via the iPad stand in our lobby";
+                document.getElementById('note').innerHTML= "Thank you, " + varFName + " " + varLName + "<br><br>CHECK-IN PROCESS:<br>Upon arrival at Ignite Church<br>Please Scan Below QR Code<br>via the iPad stand in our lobby<br><br><b>take screenshot for future check-ins</b>";
    
     }); 
 
